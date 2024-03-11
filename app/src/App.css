@@ -1,0 +1,300 @@
+.login-page .side-image {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #aee9fb;
+  background-image: url("imgs/RetroVault_Logo.jpg");
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.login-page .form-container {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  border-left: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ddd;
+  background-image: url("imgs/RV_BG_1_gray80.jpg");
+}
+@media screen and (max-width: 70rem) {
+  .login-page .side-image {
+    width: auto;
+    left: 0;
+    right: 0;
+    height: 20rem;
+    background-size: auto 80%;
+  }
+  .login-page .form-container {
+    width: auto;
+    left: 0;
+    height: auto;
+    top: 20rem;
+    min-height: calc(100vh - 20rem);
+    padding: 1rem 0;
+  }
+}
+.login-page .form-container .form {
+  background-color: #fffe;
+  backdrop-filter: blur(3px);
+  width: min(30em, calc(100vw - 4em));
+  padding: 2em;
+}
+.login-page .form-container .form > p:last-child {
+  margin-bottom: 0;
+}
+.login-page .form-container .form label {
+  display: flex;
+  margin: 1em 0;
+}
+.login-page .form-container .form label > input {
+  margin-left: 1em;
+}
+
+.main > header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  padding: .5em;
+  background: url("imgs/RetroVault_Logo.jpg") right no-repeat, #aee9fb;
+  background-size: 75px;
+}
+.main > nav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 3em;
+  left: 0;
+  bottom: 0;
+  width: 20em;
+  background-color: #d3f1f9;
+}
+.main > nav > a {
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+.main > nav > a > span {
+  flex-grow: 1;
+}
+.main > nav > a.current {
+  background-color: #b4f3fe;
+}
+.main > nav > a:hover {
+  background-color: #8cdff9;
+}
+.main > nav > .separator {
+  flex-grow: 1;
+}
+.main > nav:not(.open) {
+  display: none;
+}
+.main > nav:not(.open) + main {
+  left: 0;
+}
+.main > main {
+  position: fixed;
+  top: 3em;
+  left: 20em;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  padding: 2em;
+  background-image: url("imgs/BW_RV_BG_2.jpg");
+  
+}
+.main > header > button {
+  font-size: 1em;
+  width: 2em;
+  height: 2em;
+  padding: .5em;
+  border: none;
+  margin-right: .5em;
+  background-color: #aee9fb;
+
+}
+.main > header > button:hover, .main > header > button:active {
+  background-color: #8cdff9;
+}
+.main > header > .app-name {
+  font-size: 1.6em;
+  font-weight: bold;
+  width: 10em;
+  padding-left: 0.625em;
+  padding-bottom: 2px;
+  align-self: center;
+}
+.main > header > form {
+  flex-grow: 1;
+  display: flex;
+  padding-left: 2em;
+}
+.main > header input {
+  flex-grow: .7;
+}
+@media screen and (max-width: 600px) {
+  .main > header > .app-name {
+    display: none;
+  }
+  .main > nav {
+    z-index: 1;
+    width: auto;
+    right: 0;
+  }
+  .main > main {
+    left: 0;
+  }
+}
+
+.entry-list {
+  border: solid black 0px;
+}
+.entry-list > .loader {
+  padding: 1em;
+  background-color: #ffffffee;
+  border-radius: 1em;
+}
+.entry-list > .entry {
+  list-style: none;
+}
+.entry-list > .entry:not(:first-child) {
+  border-top: solid black 0px; 
+}
+.entry-list > .entry > * {
+  padding: 1em;
+  border: solid black 1px;
+  background-color: #ffffffee;
+  border-radius: 1em;
+  padding: 1em;
+}
+.entry-list > .entry > :first-child {
+  display: flex;
+  align-items: center;
+}
+.entry-list > .entry > :first-child .entry-heading {
+  flex-grow: 1;
+  
+}
+.entry-list > .entry > :first-child .entry-heading > h2 {
+  font-size: 1em;
+  margin: 0;
+}
+.entry-list > .entry > :first-child .entry-heading > h3 {
+  font-size: .7em;
+  margin: 0;
+}
+.entry-list > .entry.collapsed > :last-child {
+  display: none;
+}
+.entry-list > .entry .edit-controls {
+  text-align: right;
+}
+
+.entry > :last-child label {
+  display: block;
+}
+.secure-note textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+}
+
+.error-message, .error-page {
+  color: #700;
+}
+
+button, input {
+  font-size: 1em;
+}
+.icon-button {
+  width: 2em;
+  height: 2em;
+  padding: 0;
+}
+.icon-button > * {
+  margin-top: 2.5px;
+}
+input.invalid:not([type="checkbox"]), textarea.invalid {
+  border-color: #a00;
+}
+.secondary-text {
+  color: #444;
+  font-style: italic;
+}
+fieldset {
+  border: none; padding: 0;
+}
+.edit-controls {
+  padding-top: .5em;
+}
+.edit-controls button {
+  margin-left: 2px;
+}
+.entry:not(.collapsed) > header {
+  border-radius: 1em 1em 0 0;
+}
+.entry:not(.collapsed) > form {
+  border-radius: 0 0 1em 1em;
+  position: relative;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  border-radius: 0 0 1em 1em;
+  padding: 1em;
+  background-color: #dddb;
+  backdrop-filter: blur(1.5px);
+  z-index: 1;
+}
+button, input:not([type="checkbox"]) {
+  border: solid #777 1px;
+  border-radius: 2px;
+  padding: 2px 3px;
+}
+.entry :not(.entry-input) > input:not([type="checkbox"]) {
+  height: calc(2em - 6px);
+}
+.entry-input {
+  display: inline-flex;
+  height: 2em;
+}
+button.destructive:not(:disabled) {
+  background-color: #fdd;
+  color: #700;
+}
+button.destructive:not(:disabled):hover, button.destructive:not(:disabled):active {
+  background-color: #dbb;
+}
+button.primary:not(:disabled) {
+  background-color: #d3f1f9;
+}
+button.primary:not(:disabled):hover, button.primary:not(:disabled):active {
+  background-color: #b4f3fe;
+}
+.entry-list > span.error-message {
+  display: block;
+  background-color: #fdd;
+  padding: 1em;
+  border-radius: 1em;
+}
+.error-page {
+  padding: 1em;
+}
